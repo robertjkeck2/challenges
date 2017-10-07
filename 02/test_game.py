@@ -42,11 +42,11 @@ class TestGame(unittest.TestCase):
     def test_validation(self):
         draw = list('garytev'.upper())
         word = 'GARYTEV'
-        self.assertRaises(ValueError, _validation, word, draw)
+        self.assertEqual(_validation(word, draw), False)
         word = 'F'
-        self.assertRaises(ValueError, _validation, word, draw)
+        self.assertEqual(_validation(word, draw), False)
         word = 'GARETTA'
-        self.assertRaises(ValueError, _validation, word, draw)
+        self.assertEqual(_validation(word, draw), False)
 
 if __name__ == "__main__":
    unittest.main() 
